@@ -1,0 +1,148 @@
+
+:root {
+  color-scheme: dark;
+  font-family: system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0d1117;
+  color: #e6edf3;
+  min-height: 100vh;
+}
+
+main {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 70px 24px;
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0 0 12px;
+}
+
+p {
+  color: #8b949e;
+}
+
+input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 16px;
+  background: #161b22;
+  color: white;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  font: inherit;
+  outline: none;
+  transition: border-color .2s;
+}
+
+input:focus {
+  border-color: #58a6ff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.card {
+  display: block;
+  padding: 24px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color .2s, transform .2s;
+}
+
+.card:hover {
+  border-color: #58a6ff;
+  transform: translateY(-3px);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.card-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 5px;
+}
+
+.card h2 {
+  font-size: 1.15rem;
+  line-height: 1.4;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.card p {
+  font-size: .9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.card .open-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #58a6ff;
+  font-size: .85rem;
+}
+
+/* Subtle fuzzy search highlighting */
+mark {
+  color: #a5d6ff;
+  background: rgba(88, 166, 255, .14);
+  border-radius: 3px;
+  padding: 0 1px;
+  margin: 0 -1px;
+  font-weight: inherit;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+}
+
+footer {
+  margin-top: 60px;
+  padding-top: 24px;
+  border-top: 1px solid #30363d;
+  font-size: .85rem;
+  color: #8b949e;
+}
+
+footer a {
+  color: #58a6ff;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 40px 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
