@@ -12,10 +12,63 @@
   <body>
     <main>
       <header>
-        <h1>Proyolo-ks1</h1>
-        <p>A collection of my projects, tools, and experiments.</p>
+        <div class="profile-header">
+          <img src="https://github.com/Proyolo-ks1.png" alt="Proyolo-ks1 profile picture" class="profile-picture" />
+          <h1>Proyolo-ks1</h1>
+        </div>
 
-        <input id="search" type="search" placeholder="Search projects..." aria-label="Search projects" autocomplete="off" />
+        <p>
+          A collection of my projects, tools, and experiments with live websites. This is only a selection of my work. You can find more projects on my
+          <a href="https://github.com/Proyolo-ks1" target="_blank" rel="noopener noreferrer">GitHub profile</a>.
+        </p>
+
+        <div class="search-controls">
+          <input id="search" type="search" placeholder="Search projects..." aria-label="Search projects" autocomplete="off" />
+
+          <div class="filter-controls">
+            <div id="category-filters"></div>
+
+            <select id="date-filter" aria-label="Filter by last update">
+              <option value="all">Any update date</option>
+              <option value="7">Last 7 days</option>
+              <option value="30">Last 30 days</option>
+              <option value="90">Last 90 days</option>
+              <option value="365">Last year</option>
+            </select>
+
+            <button id="clear-filters" type="button">Clear filters</button>
+          </div>
+
+          <div id="active-filters" class="active-filters"></div>
+          <details class="badge-legend">
+            <summary>What do these badges mean?</summary>
+
+            <div class="badge-legend-content">
+              <p>
+                <strong>Development:</strong>
+                Indicates whether a project is still being developed, completed, or archived.
+              </p>
+
+              <p>
+                <strong>Functionality:</strong>
+                Indicates whether the project currently works, partially works, or doesn't work.
+              </p>
+
+              <p>
+                <strong>Tags:</strong>
+                Describe the type or purpose of a project, such as Game, Educational, or Experimental.
+              </p>
+
+              <p>
+                <strong>Languages:</strong>
+                Programming languages automatically detected from the project's GitHub repository.
+              </p>
+
+              <p class="badge-legend-note">A project can be a work in progress and still be fully functional.</p>
+            </div>
+          </details>
+          <p id="result-count" class="result-count" aria-live="polite"></p>
+        </div>
       </header>
 
       <div class="grid" id="projects"></div>
