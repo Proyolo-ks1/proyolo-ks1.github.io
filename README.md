@@ -1,3 +1,3 @@
-**[Visit the Proyolo-ks1 Hub](https://proyolo-ks1.github.io/MeyerWebColorBlenderReimagined/)**
+**[Visit the Proyolo-ks1 Hub](https://proyolo-ks1.github.io/)**
 
-[![MeyerWeb Color Blender Reimagined Preview](assets\images\proyoloKs1GithubioPreview.png)](https://proyolo-ks1.github.io/MeyerWebColorBlenderReimagined/)
+[![Proyolo-ks1 Github.io Preview](assets/images/proyoloKs1GithubioPreview.png)](https://proyolo-ks1.github.io/)
