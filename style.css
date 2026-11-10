@@ -25,6 +25,18 @@ header {
   margin-bottom: 40px;
 }
 
+header p a {
+    color: #58a6ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color .2s;
+}
+
+header p a:hover {
+    color: #79c0ff;
+    text-decoration: underline;
+}
+
 h1 {
   font-size: clamp(2rem, 5vw, 3rem);
   margin: 0 0 12px;
