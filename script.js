@@ -492,6 +492,11 @@ function getBadgeClass(name) {
 // --------------------------------------------------
 
 
+const statusPriority = {
+  [ProjectStatus.COMPLETED]: 0,
+  [ProjectStatus.WIP]: 1,
+  [ProjectStatus.ARCHIVED]: 2
+};
 const functionalityPriority = {
   [ProjectFunctionality.WORKING]: 0,
   [ProjectFunctionality.PARTIAL]: 1,
@@ -598,15 +603,25 @@ function renderProjects(query = "") {
         return b.score - a.score;
       }
 
-      // Otherwise, prioritize functionality.
-      const priorityA =
+      // Otherwise, prioritize development status first.
+      const statusA = statusPriority[a.project.status] ?? 99;
+      const statusB = statusPriority[b.project.status] ?? 99;
+
+      // Then prioritize functionality.
+      const functionalityA =
         functionalityPriority[a.project.functionality] ?? 99;
 
-      const priorityB =
+      const functionalityB =
         functionalityPriority[b.project.functionality] ?? 99;
 
-      return priorityA - priorityB ||
-        a.originalIndex - b.originalIndex;
+      // Prioritize featured projects.
+      const featuredA = a.project.featured ? 0 : 1;
+      const featuredB = b.project.featured ? 0 : 1;
+
+      return featuredA - featuredB ||
+          statusA - statusB ||
+          functionalityA - functionalityB ||
+          a.originalIndex - b.originalIndex;
     });
 
   resultCount.textContent = `${matches.length} of ${projects.length} projects`;
