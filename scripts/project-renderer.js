@@ -315,6 +315,33 @@ export function renderProjects(query = "") {
         card.className = "card";
         card.href = new URL(project.path + "/", BASE_URL).href;
 
+        // Thumbnail container
+        const previewContainer = document.createElement("div");
+        previewContainer.className = "card-preview-container";
+
+        // Thumbnail
+        const image = document.createElement("img");
+        image.className = "card-preview";
+        image.src = project.image || "assets/images/default-placeholder - 480x270.png";
+        image.alt = `${project.name} preview`;
+        image.loading = "lazy";
+        image.onerror = () => {
+            image.onerror = null;
+            image.src = "assets/images/default-placeholder - 480x270.png";
+        };
+
+        previewContainer.appendChild(image);
+
+        // Featured badge
+        if (project.featured) {
+            card.classList.add("featured");
+            const label = document.createElement("span");
+            label.className = "featured-label";
+            label.textContent = "★ Featured";
+            previewContainer.appendChild(label);
+        }
+
+        card.appendChild(previewContainer);
 
         // Header and icon.
         const header = document.createElement("div");
